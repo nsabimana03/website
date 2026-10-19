@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BRIGHT MIND SCHOLARSHIP INITIATIVE FOR ALL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="Bright Mind Scholarship Initiative for All home">
+        <!-- Simple SVG logo: graduation cap -->
+        <svg class="logo" width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="#F0C851" d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2z"></path>
+          <path fill="#0B2545" d="M11 13.07L3.2 9.7 3 10l8 3.64V22h2v-8.36L21 10l-.2-.3L13 13.07V4h-2v9.07z" opacity="0.15"></path>
+        </svg>
+        <div class="brand-text">
+          <span class="org-title">BRIGHT MIND</span>
+          <span class="org-sub">Scholarship Initiative For All</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+        <ul id="navLinks" class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#scholarships">Scholarships</a></li>
+          <li><a href="#croatia">Croatia</a></li>
+          <li><a href="#profile">Student Profile</a></li>
+          <li><a href="#admin">Admin (Demo)</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Your Future Begins with the Right Scholarship.</h1>
+          <p class="lead">Discover scholarships that match your qualifications, interests, and career goals. Use the search and filters to find verified opportunities or sample listings to practice applying.</p>
+
+          <form id="quickSearchForm" class="search-form" aria-label="Quick scholarship search">
+            <label for="quickSearch" class="visually-hidden">Search scholarships</label>
+            <input id="quickSearch" name="q" type="search" placeholder="Search by scholarship name, provider, field..." aria-label="Search scholarships" />
+            <button id="findBtn" class="btn primary" type="submit">Find Scholarships</button>
+            <button id="exploreBtn" class="btn secondary" type="button">Explore Opportunities</button>
+          </form>
+          <div class="hero-actions">
+            <a href="#scholarships" class="btn ghost">Browse Directory</a>
+          </div>
+        </div>
+
+        <div class="hero-image" aria-hidden="true">
+          <!-- decorative illustration (pure CSS/shape) -->
+          <div class="cap-illustration" title="Graduation Illustration"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="featured container" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured Scholarships</h2>
+      <div id="featuredList" class="cards-grid">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <!-- SCHOLARSHIP DIRECTORY + FILTERS -->
+    <section id="scholarships" class="directory container" aria-labelledby="dir-heading">
+      <h2 id="dir-heading">Scholarship Directory</h2>
+
+      <div class="directory-top">
+        <div class="filters" aria-label="Filters">
+          <div class="filter-row">
+            <label for="filterCountry">Destination country</label>
+            <select id="filterCountry"><option value="">Any</option></select>
+          </div>
+          <div class="filter-row">
+            <label for="filterNationality">Nationality (eligible)</label>
+            <select id="filterNationality"><option value="">Any</option></select>
+          </div>
+          <div class="filter-row">
+            <label for="filterLevel">Study level</label>
+            <select id="filterLevel"><option value="">Any</option>
+              <option value="Diploma">Diploma</option>
+              <option value="Bachelor">Bachelor's</option>
+              <option value="Master">Master's</option>
+              <option value="PhD">PhD</option>
+            </select>
+          </div>
+          <div class="filter-row">
+            <label for="filterSubject">Field of study</label>
+            <select id="filterSubject"><option value="">Any</option></select>
+          </div>
+          <div class="filter-row">
+            <label for="filterFunding">Funding type</label>
+            <select id="filterFunding"><option value="">Any</option>
+              <option value="Full">Full</option>
+              <option value="Partial">Partial</option>
+              <option value="Stipend">Stipend</option>
+            </select>
+          </div>
+          <div class="filter-row">
+            <label for="filterStatus">Application status</label>
+            <select id="filterStatus"><option value="">Any</option>
+              <option value="open">Open</option>
+              <option value="closed">Closed</option>
+              <option value="verified">Verified</option>
+            </select>
+          </div>
+
+          <div class="filter-actions">
+            <button id="applyFilters" class="btn">Apply</button>
+            <button id="resetFilters" class="btn ghost">Reset</button>
+          </div>
+        </div>
+
+        <div class="directory-controls">
+          <div class="sort-row">
+            <label for="sortBy">Sort</label>
+            <select id="sortBy">
+              <option value="relevance">Relevance</option>
+              <option value="deadline">Deadline (soonest)</option>
+              <option value="lastVerified">Last verified</option>
+            </select>
+          </div>
+
+          <div class="view-row">
+            <label for="perPage">Per page</label>
+            <select id="perPage"><option>6</option><option>12</option><option>24</option></select>
+          </div>
+        </div>
+      </div>
+
+      <div id="directoryList" class="cards-grid" role="list">
+        <!-- Filled by JS -->
+      </div>
+
+      <div id="directoryEmpty" class="empty-state" hidden>
+        <p>No scholarships match your search and filter criteria. Try broadening filters or clear all filters.</p>
+      </div>
+    </section>
+
+    <!-- CROATIA SECTION -->
+    <section id="croatia" class="croatia container" aria-labelledby="cro-heading">
+      <h2 id="cro-heading">Croatia scholarship opportunities — guidance & resources</h2>
+      <p>This section provides starting points and official institutional links for Croatia-related scholarship information. Listed items are demonstration pointers; we do not claim active offers unless specifically verified. Expired calls are marked closed when known.</p>
+      <ul class="cro-list">
+        <li>
+          <strong>University of Zagreb — Resources</strong>
+          <p>Visit the official University of Zagreb scholarship and international students pages for up-to-date announcements.</p>
+          <a href="https://www.unizg.hr" target="_blank" rel="noopener noreferrer">University of Zagreb — Official website</a>
+        </li>
+        <li>
+          <strong>University of Split — Resources</strong>
+          <p>Check the international office and news for grants and scholarship calls.</p>
+          <a href="https://www.unist.hr" target="_blank" rel="noopener noreferrer">University of Split — Official website</a>
+        </li>
+        <li>
+          <strong>University of Rijeka — Resources</strong>
+          <p>Consult the university and faculty pages for the latest opportunities and application procedures.</p>
+          <a href="https://www.uniri.hr" target="_blank" rel="noopener noreferrer">University of Rijeka — Official website</a>
+        </li>
+      </ul>
+      <p class="muted">Note: Use official institutional pages and government portals as authoritative sources. We link to homepages here; visit the institutions' scholarship or international office sections for specifics.</p>
+    </section>
+
+    <!-- STEP-BY-STEP -->
+    <section class="how container" aria-labelledby="how-heading">
+      <h2 id="how-heading">How it works</h2>
+      <ol class="steps">
+        <li><strong>Create a student profile:</strong> Enter your qualifications and preferences (frontend-only, not stored securely).</li>
+        <li><strong>Search & filter:</strong> Use search and filters to find matches from the demonstration dataset.</li>
+        <li><strong>Match & review:</strong> The system ranks matches and explains which criteria are met or need verification.</li>
+        <li><strong>Follow official links:</strong> Use the official source/application links on each card. External links open in a new tab.</li>
+      </ol>
+    </section>
+
+    <!-- STUDENT PROFILE & MATCHING -->
+    <section id="profile" class="profile container" aria-labelledby="profile-heading">
+      <h2 id="profile-heading">Student Profile & Matching</h2>
+      <form id="profileForm" class="profile-form" novalidate>
+        <div class="form-row">
+          <label for="studentName">Full name</label>
+          <input id="studentName" name="name" required />
+          <span class="field-error" data-for="studentName" aria-live="polite"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="studentNationality">Nationality</label>
+          <select id="studentNationality" name="nationality" required></select>
+          <span class="field-error" data-for="studentNationality" aria-live="polite"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="studentResidence">Country of residence</label>
+          <select id="studentResidence" name="residence" required></select>
+          <span class="field-error" data-for="studentResidence" aria-live="polite"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="currentQualification">Current qualification</label>
+          <input id="currentQualification" name="qualification" placeholder="e.g., High School Diploma, BSc" required />
+        </div>
+
+        <div class="form-row">
+          <label for="graduationYear">Graduation year</label>
+          <input id="graduationYear" name="gradYear" type="number" min="1900" max="2100" required />
+        </div>
+
+        <div class="form-row">
+          <label for="studentGPA">Grades / GPA (optional)</label>
+          <input id="studentGPA" name="gpa" type="number" step="0.01" min="0" max="4" placeholder="e.g., 3.5" />
+        </div>
+
+        <div class="form-row">
+          <label for="preferredLevel">Preferred study level</label>
+          <select id="preferredLevel" name="level" required>
+            <option value="">Select level</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Bachelor">Bachelor's</option>
+            <option value="Master">Master's</option>
+            <option value="PhD">PhD</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="intendedField">Intended field of study</label>
+          <input id="intendedField" name="field" placeholder="e.g., Computer Science" required />
+        </div>
+
+        <div class="form-row">
+          <label for="preferredDestination">Preferred destination country</label>
+          <select id="preferredDestination" name="destination" required></select>
+        </div>
+
+        <div class="form-row">
+          <label for="fundingPreference">Funding preference</label>
+          <select id="fundingPreference" name="fundingPref">
+            <option value="">No preference</option>
+            <option value="Full">Full</option>
+            <option value="Partial">Partial</option>
+            <option value="Stipend">Stipend</option>
+          </select>
+        </div>
+
+        <fieldset class="upload-fieldset">
+          <legend>Upload transcripts / result slips (demo)</legend>
+          <p class="muted">Files are validated in the browser only; they are not uploaded anywhere in this prototype.</p>
+          <label for="docUpload" class="btn">Select files (PDF, JPG, PNG)</label>
+          <input id="docUpload" name="documents" type="file" accept=".pdf,image/*" multiple />
+          <div id="uploadList" class="upload-list" aria-live="polite"></div>
+          <span class="field-error" data-for="docUpload"></span>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" id="profileSubmit" class="btn primary">Find Matches</button>
+          <button type="reset" class="btn ghost">Reset</button>
+        </div>
+      </form>
+
+      <div id="matchResults" class="matches" aria-live="polite" hidden>
+        <h3>Matching results</h3>
+        <div id="matchesList" class="cards-grid"></div>
+      </div>
+    </section>
+
+    <!-- ADMIN DEMO -->
+    <section id="admin" class="admin container" aria-labelledby="admin-heading">
+      <h2 id="admin-heading">Administrator Dashboard (Demo)</h2>
+      <p>This is a frontend-only administration prototype. Changes persist in your browser (localStorage) and are <strong>not</strong> secure. Do not use this as a production admin interface.</p>
+
+      <form id="adminForm" class="admin-form" aria-label="Add or edit scholarship (demo)">
+        <input type="hidden" id="adminEditId" />
+        <div class="form-row">
+          <label for="admName">Scholarship name</label>
+          <input id="admName" required />
+        </div>
+
+        <div class="form-row">
+          <label for="admProvider">Provider</label>
+          <input id="admProvider" required />
+        </div>
+
+        <div class="form-row">
+          <label for="admCountry">Country of study</label>
+          <input id="admCountry" required />
+        </div>
+
+        <div class="form-row">
+          <label for="admNationalities">Eligible nationalities (comma separated)</label>
+          <input id="admNationalities" placeholder="All, Rwanda, Nigeria" />
+        </div>
+
+        <div class="form-row">
+          <label for="admLevel">Study level</label>
+          <select id="admLevel">
+            <option>Diploma</option>
+            <option>Bachelor</option>
+            <option>Master</option>
+            <option>PhD</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="admFields">Eligible fields (comma separated)</label>
+          <input id="admFields" placeholder="Engineering, Computer Science" />
+        </div>
+
+        <div class="form-row">
+          <label for="admFunding">Funding coverage</label>
+          <input id="admFunding" placeholder="Full tuition, stipend" />
+        </div>
+
+        <div class="form-row">
+          <label for="admFeeVerified">Application fee verified?</label>
+          <select id="admFeeVerified"><option value="unknown">Unknown</option><option value="verified">Verified</option><option value="no">No fee</option></select>
+        </div>
+
+        <div class="form-row">
+          <label for="admDeadline">Application deadline (YYYY-MM-DD)</label>
+          <input id="admDeadline" type="date" />
+        </div>
+
+        <div class="form-row">
+          <label for="admStatus">Status</label>
+          <select id="admStatus"><option value="open">Open</option><option value="closed">Closed</option></select>
+        </div>
+
+        <div class="form-row">
+          <label for="admDocs">Required documents (comma separated)</label>
+          <input id="admDocs" />
+        </div>
+
+        <div class="form-row">
+          <label for="admSourceUrl">Official source URL</label>
+          <input id="admSourceUrl" type="url" placeholder="https://..." />
+        </div>
+
+        <div class="form-row">
+          <label for="admApplyUrl">Application URL</label>
+          <input id="admApplyUrl" type="url" placeholder="https://..." />
+        </div>
+
+        <div class="form-row">
+          <label for="admVerified">Verified?</label>
+          <select id="admVerified"><option value="sample">Sample</option><option value="verified">Verified (official)</option><option value="closed">Closed/Expired</option></select>
+        </div>
+
+        <div class="form-actions">
+          <button id="adminSave" type="submit" class="btn primary">Save (demo)</button>
+          <button id="adminClear" type="button" class="btn ghost">Clear</button>
+        </div>
+      </form>
+
+      <h3>Manage listings (demo)</h3>
+      <div id="adminList" class="cards-grid"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact container" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p>Contact placeholders:</p>
+      <address>
+        Email: <a href="mailto:info@example.org">info@example.org</a><br />
+        Phone: +000 000 000<br />
+        Address: 123 Education Lane, City, Country
+      </address>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> BRIGHT MIND Scholarship Initiative For All — Demo site. This is a frontend prototype and does not store data securely.</p>
+      <nav class="footer-nav">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#accessibility">Accessibility</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
